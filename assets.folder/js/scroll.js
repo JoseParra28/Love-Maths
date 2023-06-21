@@ -30,4 +30,61 @@ const topLink = document.querySelector(".top-link");
         navBar.classList.remove("fixed-nav")
     }
     
- })
+ });
+
+
+//  ----------------------------tabs
+const btns = document.querySelectorAll("tab-btn")
+const about = document.querySelector(".about")
+const article = document.querySelectorAll(".content")
+
+about.addEventListener("click", function(e){
+    const id = e.target.dataset.id;
+    if(id) {
+        btns.forEach(function(btn){
+            btn.classList.remove("active");
+            e.target.classList("active");
+        });
+        article.forEach(function(article){
+            article.classList.remove("active")
+        })
+        const element = document.getElementById(id)
+        element.classList.add("active")
+    }
+})
+
+// mine
+
+
+const bts = document.querySelectorAll(".btnTarget")
+
+bts.forEach(function(display){
+    display.addEventListener("click", function(e){
+        const click = e.currentTarget.dataset.id
+        const parra = document.querySelector(".hide")
+        if(click === "recipes"){
+            parra.classList.toggle("hide")
+        }
+       
+    })
+})
+
+const question = document.querySelector(".question")
+const answerBtn = document.querySelectorAll(".answerBtn")
+
+
+
+answerBtn.forEach(function(game){
+    game.addEventListener("click", function(e){
+        const answerSelection =  e.currentTarget.dataset.id;
+        if(answerSelection === 'a'){
+            console.log("hehe")
+        }else if (answerSelection === 'b'){
+            console.log("huhu")
+        }else if (answerSelection === 'c'){
+            console.log("kakka")
+        }else {
+            console.log("end")
+        }
+    })
+})
